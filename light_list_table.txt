@@ -1,0 +1,106 @@
+
+--- Module  0 --------------------------
+Port  4: Tower 1 red warning
+Port  5: Tower 1 night
+Port  6: U/G left
+
+--- Module  1 --------------------------
+Port  0: Parking car 1 (north roof) + car 3 (entrance)
+Port  1: Parking car 2
+Port  2: Parking ceiling light 1
+Port  3: Parking ceiling light 2
+Port  4: Parking ceiling light 3
+Port  5: Parking ceiling light 4
+Port  6: Parking lift tower
+Port  7: Parking car 4
+Port  8: Parking car 5
+Port  9: Parking car 6
+Port 10: Parking car 7
+Port 11: Parking car 8
+
+--- Module  2 --------------------------
+Port  0: Shin-Yukari control tower
+Port  1: Shin-Yukari track 2 light
+Port  2: Parking ceiling light 5 (top left)
+Port  3: Parking ceiling light 6 (top right)
+Port  4: Shin-Yukari track 4 light
+Port  5: Shin-Yukari track 1-2 centre
+Port  6: Shin-Yukari track 3-4 centre
+Port  7: Shin-Yukari track 3 light
+Port  8: Shin-Yukari track 2 light
+Port 10: Shin-Yukari south blue trees
+Port 11: Shin-Yukari south lamp posts
+
+--- Module  3 --------------------------
+Port  0: Tram station track 1
+Port  1: Tram station track 2
+Port  2: Tram station track 3
+Port  3: Tram station vending machines
+Port  4: Tram station red stop signals
+Port  6: Shin-Yukari tunnel east 1
+Port  7: Shin-Yukari tunnel east 2
+
+--- Module  4 --------------------------
+Port  0: Shin-Yukari station north ceiling
+Port  1: Shin-Yukari station ceiling indications
+Port  2: Shin-Yukari station south ceiling
+Port  3: Shin-Yukari station ad boards
+Port  4: Shin-Yukari station Uniqlo window
+Port  5: Shin-Yukari station Uniqlo JTB ceiling
+Port  6: Shin-Yukari station JTB logo
+Port  7: Shin-Yukari station Yoshinoya 7-11 ceiling
+Port  8: Shin-Yukari station Yoshinoya 7-11 logo
+
+--- Module  5 --------------------------
+Port  0: Shin-Yukari station Starbucks room pendant lights
+Port  1: Shin-Yukari station Starbucks counter pendant lights
+Port  2: Shin-Yukari station lockers
+Port  3: Shin-Yukari station Cafe de Crie
+Port  4: Shin-Yukari station Starbucks ceiling
+Port  9: Shin-Yukari station outdoor left
+Port 10: Shin-Yukari station outdoor taxi stand
+Port 11: Shin-Yukari station outdoor right
+
+--- Module  6 --------------------------
+Port  0: Maintenance office 1Fl entrance
+Port  1: Maintenance office 1Fl room
+Port  2: Maintenance office staircase
+Port  3: Maintenance office 3Fl Room
+Port  4: Maintenance office parking lamp posts
+Port  5: Maintenance office 2Fl Meeting Room
+Port  6: Shin-Yukari tunnel east 3
+Port  7: Truck terminal loading bay light
+Port  8: Truck terminal ceiling light
+Port  9: Truck terminal lamp posts 1
+Port 10: Truck terminal lamp posts 2
+Port 11: U/G right
+Port 11: Truck terminal lamp posts 3
+
+--- Module  9 --------------------------
+Port  0: Yukari Hill tunnel
+Port  3: Yukari Hill pagoda facade
+Port  4: Yukari Hill temple lamp posts
+Port  5: Yukari Hill temple facade
+Port  6: Engine house lamp posts
+Port  7: Engine house yard spotlights
+Port  8: Engine house indoor lights
+
+--- Module 14 --------------------------
+Port  0: Tower 2 red warning
+Port  1: Tower 2 night
+Port  2: U/G left back
+Port  7: Japanese restaurant entrance sign
+Port  8: Japanese restaurant parking exit
+Port  9: Japanese restaurant indoor back
+Port 10: Japanese restaurant indoor front
+Port 11: Japanese restaurant parking entrance
+
+--- Module 100 --------------------------
+Port  0: Sky front red
+Port  1: Sky front green
+Port  2: Sky front blue
+Port  3: Sky front white
+Port  4: Sky back red
+Port  5: Sky back green
+Port  6: Sky back blue
+Port  7: Sky back white

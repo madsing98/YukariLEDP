@@ -1,16 +1,10 @@
 # Import libraries
 import time           # Time management functions
 import tkinter as tk  # Tkinter GUI
-import json           # JSON data interchange format library
 import sys            # Library to check platform/OS
 import os             # Used to change current directory
 import random         # Random number generator library
 from subprocess import call
-
-# Debugging variable, set to True to load the light_list from the file light_list.py (instead of LightList.json)
-# and regenerate the JSON file
-# Only valid if InSitu is false
-Reset_light_list = False
 
 # System variable, when InSitu == False the app does not access any GPIO, SPI, ...
 if(sys.platform == 'linux'):
@@ -179,26 +173,9 @@ def SetLEDBrightness(led, value):
             LEDCommand[pos+1] = value & 255  # LSB
 
 
-# Function to save light_list into the JSON file 'light_list.json'
-def SaveLightList(light_list_dict):
-    with open('light_list.json', 'w') as fp:
-        json.dump(light_list_dict, fp, indent=2, sort_keys=False)
-
-
-# Function to load light_list from the JSON file 'light_list.json'
-def LoadLightList():
-    with open('light_list.json') as fp:
-        light_list_dict = json.load(fp)
-        return light_list_dict
-
-# If Reset_light_list is True, initialize light_list from the file 'light_list.py' then save it
-# If Reset_light_list is Flase, load light_list from the JSON file 'light_list.json'
+# Initialize light_list from the file 'light_list.py'
 SkyLEDModule = 100
-if InSitu is False and Reset_light_list is True:
-    from light_list import *
-    SaveLightList(light_list)
-else:
-    light_list = LoadLightList()
+from light_list import *
 
 # Save light_list modules and ports to a text file for debugging / reference
 previous_module = -1
