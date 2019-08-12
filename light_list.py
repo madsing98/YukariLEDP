@@ -10,21 +10,10 @@
 # module: address of the TLC59711 module, from 0. SkyLEDModule (= 100) is reserved for SkyLED LEDs 
 # port: port of the corresponding PWM output, 0 to 11
 
-SkyLEDModule = 100
 light_list = [
     {'name': 'U/G left',      'mode': 'Constant', 'value': 0, 'value_on': 1000, 'switch': 'Switch 0', 'module': 0, 'port': 6},
     {'name': 'U/G left back', 'mode': 'Constant', 'value': 0, 'value_on': 1000, 'switch': 'Switch 1', 'module': 14, 'port': 2},
     {'name': 'U/G right',     'mode': 'Constant', 'value': 0, 'value_on': 1000, 'switch': 'Switch 3', 'module': 6, 'port': 11},
-
-    {'name': 'Sky front red',   'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0, 200, 100,  0], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [  0,   0,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 0},
-    {'name': 'Sky front green', 'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0, 100, 100,  0], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [  0,   0,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 1},
-    {'name': 'Sky front blue',  'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0,   0,  60, 80], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [ 80,  60,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 2},
-    {'name': 'Sky front white', 'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [1000, 100, 100, 40], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [ 40, 100, 350, 1000], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 3},
-
-    {'name': 'Sky back red',   'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0, 400, 200,   0], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [  0,   0,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 4},
-    {'name': 'Sky back green', 'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0, 100, 100,   0], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [  0,   0,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 5},
-    {'name': 'Sky back blue',  'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [   0,   0,  60, 300], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [300,  60,   0,    0], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 6},
-    {'name': 'Sky back white', 'mode': 'Day/Night', 'time_to_night': [0,  20,  40,  60], 'value_to_night': [1000, 100, 100,  40], 'time_to_day': [0,  20,  40,  60], 'value_to_day':  [ 40, 100, 350, 1000], 'switch': 'Sky', 'module': SkyLEDModule, 'port': 7},
 
     {'name': 'Tower 1 red warning',  'mode': 'Cycle', 'time': [0.0, 2.0, 2.3, 2.7, 3.0], 'value': [300, 300, 0, 0, 300], 'module': 0, 'port': 4},
     {'name': 'Tower 1 night',        'mode': 'Random Day/Night', 'value_night': 300, 'value_day': 0, 'module': 0, 'port': 5},

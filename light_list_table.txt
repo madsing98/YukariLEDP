@@ -94,13 +94,3 @@ Port  8: Japanese restaurant parking exit
 Port  9: Japanese restaurant indoor back
 Port 10: Japanese restaurant indoor front
 Port 11: Japanese restaurant parking entrance
-
---- Module 100 --------------------------
-Port  0: Sky front red
-Port  1: Sky front green
-Port  2: Sky front blue
-Port  3: Sky front white
-Port  4: Sky back red
-Port  5: Sky back green
-Port  6: Sky back blue
-Port  7: Sky back white

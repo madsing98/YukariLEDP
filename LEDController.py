@@ -69,13 +69,6 @@ if InSitu:
     spi.bits_per_word = 8       # 8 bits per word, looks like it's the only value working
     spi.max_speed_hz = 8000000  # 8 MHz
 
-    # Initialize the com port to communicate with the SkyLED Arduino
-    import serial         # Serial communication library
-    SkyLEDSerial = serial.Serial("/dev/ttyUSB0", 115200)    # Serial communication through the USB port at 115200 bits per second
-                                                            # Side effect: this command also resets/reboots the SkyLED Arduino
-
-SkyLEDColor = [0, 0, 0, 0, 0, 0, 0, 0]
-
 
 # tkinter windows hierarchy
 # win
@@ -161,9 +154,7 @@ def SetLEDBrightness(led, value):
         # Gamma correction
         value = int(65535.00*(float(value)/1000.00)**(1.8))
 
-        if led['module'] == SkyLEDModule:
-            SkyLEDColor[led['port']] = value >> 4
-        elif led['module'] < NumberOfLEDModules and led['port'] < 12:
+        if led['module'] < NumberOfLEDModules and led['port'] < 12:
             # Compute the particular LED/port control word position in LEDCommand
             # The length of the message is 28 bytes per LED module
             # Each LED/port occupies 16 bits (two bytes)
@@ -174,7 +165,6 @@ def SetLEDBrightness(led, value):
 
 
 # Initialize light_list from the file 'light_list.py'
-SkyLEDModule = 100
 from light_list import *
 
 # Save light_list modules and ports to a text file for debugging / reference
@@ -212,21 +202,6 @@ def InitConstantLEDs():
     for led in light_list:
         if led['mode'] == 'Constant':
             SetLEDBrightness(led, led['value'])
-
-
-# Send and store the startup value of the sky LEDs to the SkyLED Arduino
-def StoreStartupSkyLED():
-    for led in light_list:
-        if led['module'] == SkyLEDModule:
-            SetLEDBrightness(led, led['value_to_night'][0])
-    if InSitu:
-        SkyLEDMsg = '<'
-        for v in SkyLEDColor:
-            SkyLEDMsg = SkyLEDMsg + "%0.3X" % v
-        SkyLEDMsg = SkyLEDMsg + '$'
-        SkyLEDSerial.write(SkyLEDMsg.encode('utf-8'))
-        # Debugging message:
-        # print('Sent: ' + SkyLEDMsg)
 
 
 # Function to compute the brightness of an LED (led) based on the current time (c_time)
@@ -776,7 +751,6 @@ def UpdateProgressBar():
 
 # Start loop update functions, then the main tkinter loop
 InitConstantLEDs()                      # Called once
-win.after(2000, StoreStartupSkyLED)     # Called once after 2 seconds in order to wait until the SkyLED Arduino has started
 RandomizeDayNightTime()                 # Called once
 
 UpdateAllLEDs()                         # Called repetitively using .after()
