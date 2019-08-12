@@ -148,7 +148,6 @@ for _ in range(NumberOfLEDModules):
 # The "value" parameter is gamma corrected before being stored in LEDCommand
 def SetLEDBrightness(led, value):
     global LEDCommand
-    global SkyLEDColor
 
     if value >= 0 and value <= 1000:
         # Gamma correction
@@ -643,18 +642,6 @@ def UpdateAllLEDs():
     if InSitu:
         # Send the command message to all LEDs on the SPI bus
         spi.writebytes(LEDCommand)
-        # Send SkyLED data over serial comm to the Arduino controlling SkyLED
-        # The command are
-        # - "<FRRFGGFBBFWWBRRBGGBBBBWW>" to set front and back LEDs to the corresponding values.
-        # - "<FRRFGGFBBFWWBRRBGGBBBBWW$" to store default values (used at startup) in EEPROM.
-        # FRR, FGG, FBB, FWW, BRR, BGG, BBB and BWW are three-digit 12-bit hexadecimal numbers.
-        SkyLEDMsg = '<'
-        for v in SkyLEDColor:
-            SkyLEDMsg = SkyLEDMsg + "%0.3X" % v
-        SkyLEDMsg = SkyLEDMsg + '>'
-        SkyLEDSerial.write(SkyLEDMsg.encode('utf-8'))
-        # Debugging message:
-        # print('Sent: ' + SkyLEDMsg)
     win.after(50, UpdateAllLEDs)   # Come back in 50 ms
 
 
